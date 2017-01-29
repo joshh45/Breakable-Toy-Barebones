@@ -1,0 +1,14 @@
+.navbar-text {
+  background-color: #999999
+}
+
+
+body {
+  background: url(./explore.jpg) no-repeat;
+background-size: cover;
+
+}
+
+.search-forms {
+  vertical-align:top;
+}

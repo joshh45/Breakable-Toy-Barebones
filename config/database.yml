@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: rails-react-boilerplate-code_development
+  database: breakable-backbone_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rails-react-boilerplate-code_test
+  database: breakable-backbone_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: rails-react-boilerplate-code_production
+  database: breakable-backbone_production
   username: rails-react-boilerplate-code
   password: <%= ENV['RAILS-REACT-BOILERPLATE-CODE_DATABASE_PASSWORD'] %>

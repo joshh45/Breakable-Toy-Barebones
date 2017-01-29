@@ -12,17 +12,15 @@
 
   <p>
     <%= form_tag('./locations', method: "get" ) do %>
-    <%= text_field_tag :location, params[:location], placeholder: "" %>
+    <%= text_field_tag :location, params[:location], placeholder: "Location" %>
     <%= text_field_tag :activity, params[:activity], placeholder: "Activity" %>
     <%= submit_tag("Discover") %>
     <% end  %>
   </p>
 
 
-<% if @location.empty? || @activity.empty? %>
-    <%= flash[:notice] = "Please fill in the forms!"  %>
-    <% else %>
+
       <h1> <%= @location %> </h1>
       <h1> <%= @activity %> </h1>
-    <% end  %>
+
   </div>

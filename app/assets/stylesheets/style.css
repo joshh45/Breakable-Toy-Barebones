@@ -3,12 +3,53 @@
 }
 
 
-body {
+/*body {
   background: url(./explore.jpg) no-repeat;
-background-size: cover;
-
-}
+  background-size: cover;
+}*/
 
 .search-forms {
   vertical-align:top;
+}
+
+.item-page {
+
+}
+
+.form {
+  /*width: 125px;
+   padding: 5px;
+   border: 3px solid black;
+   margin: 30px;
+   background: #FFEBCD;
+   opacity: 0.6; */
+background-color: rgba(5,4,2,0.35);
+width:300px;
+height: 100%;
+margin: 5px;
+padding: 45px;
+}
+
+.items {
+  border: 5px solid black ;
+  width: 450px;
+  margin-bottom: 50px;
+}
+
+.title_name {
+}
+
+.box1 {
+  background-color: blue;
+}
+
+.discover {
+  font-size: 20px;
+  border: red;
+  color: blue;
+  padding: 5px 5px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

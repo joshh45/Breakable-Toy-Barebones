@@ -9,18 +9,41 @@
     <div class='text-center'><%= submit_tag "Search", name: nil%> </div>
   </p> -->
 
-
-  <p>
-    <%= form_tag('./locations', method: "get" ) do %>
-    <%= text_field_tag :location, params[:location], placeholder: "Location" %>
-    <%= text_field_tag :activity, params[:activity], placeholder: "Activity" %>
-    <%= submit_tag("Discover") %>
-    <% end  %>
-  </p>
-
-
-
-      <h1> <%= @location %> </h1>
-      <h1> <%= @activity %> </h1>
-
+  <div class="form">
+    <p>
+      <%= form_tag('./locations', method: "get" ) do %>
+      <%= text_field_tag :location, params[:location], placeholder: "Location" %> <br/>
+      <%= text_field_tag :activity, params[:activity], placeholder: "Activity" %> <br/>
+      <div class="discover"><%= submit_tag("Discover") %></div>
+      <% end  %>
+    </p>
   </div>
+
+
+
+    <h1> <%= @location %> </h1>
+    <h1> <%= @activity %> </h1>
+    <h1> <%= @message %> </h1>
+
+</div>
+
+
+
+
+  <% if @location != nil && @activity != nil %>
+    <h1> API data </h1>
+
+  <% @data_object['businesses'].each do |x| %>
+    <div class="items">
+       <div class="box1"><img src="<%=x['image_url']%>"/></div>
+       <h3><div class="title_name"> <%= x['name'] %></div></h3>
+       <p>Rating:<%= x['rating'] %></p>
+       <img src="<%=x['rating_img_url']%>"/>
+        <p> Address: <%= x["location"]["display_address"].join(" ")%> </p>
+        <a class="button small expanded" href="#">Wow, Small Expand</a>
+        <br/>
+      <br/>
+    </div>
+
+    <% end %>
+  <% end  %>

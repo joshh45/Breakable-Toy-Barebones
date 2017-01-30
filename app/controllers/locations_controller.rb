@@ -15,7 +15,6 @@ class LocationsController < ApplicationController
       @data = Yelp.client.search(@location, {term: @activity}, limit: 5)
       @data = @data.to_json
       @data_object = JSON.parse(@data)
-      binding.pry
     end
   end
 

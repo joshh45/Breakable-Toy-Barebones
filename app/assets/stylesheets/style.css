@@ -2,11 +2,39 @@
   background-color: #999999
 }
 
-/*
-body {
-  background: url(./explore.jpg) no-repeat;
-  background-size: cover;
+/*.background2 {
+  background-color: white;
 }*/
+
+.homepage {
+  background: url(./explore.jpg) no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 1%;
+  padding-left: 0%;
+  /*this changes the side to side*/
+  padding-right: 0%;
+  width: 100%;
+  height: 100%;
+
+  /*padding-bottom: 100%;*/*/
+}
+
+/*title*/
+.title_page {
+  text-align: center;
+  font-family: 'Allerta Stencil', sans-serif;
+	font-size: 60px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+.nav_buttons {
+  text-align: center;
+}
+
+
 
 .search-forms {
   vertical-align:top;

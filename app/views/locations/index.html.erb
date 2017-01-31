@@ -1,3 +1,5 @@
+<div class="background2">
+
 <h1> THIS IS WHERE I WANT TO SEE MY LIST OF ITEMS </h1>
 
 <h1 class="title"> Adventure Awaits </hi>
@@ -32,7 +34,6 @@
 
   <% if @location != nil && @activity != nil %>
     <h1> API data </h1>
-
   <% @data_object['businesses'].each do |x| %>
     <div class="items">
        <div class="box1"><img src="<%=x['image_url']%>"/></div>
@@ -41,10 +42,12 @@
        <img src="<%=x['rating_img_url']%>"/>
         <p> Address: <%= x["location"]["display_address"].join(" ")%> </p>
         <p><a href="<%=x["url"]%>"/>Learn More</p>
-        <a class="button small expanded" href="#">Wow, Small Expand</a>
+
+        <%= button_to 'add to', {:controller => "locations", :action => "create", :name => x['name'], :rating => x['rating'], :cover_url => x['image_url'], :address => x["location"]["display_address"].join(" "), :rating_img_url => x['rating_img_url'], :url => x['url'] } , :method=>:post  %>
+          <div class="notice"><%= flash[:notice] %></div>
         <br/>
       <br/>
     </div>
-
     <% end %>
   <% end  %>
+</div>

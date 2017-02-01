@@ -27,7 +27,7 @@
 
   <div class="nav_buttons">
     <%= link_to 'Home', homepage_index_path %> |
-    <%= link_to 'Profile', homepage_index_path %> |
+    <%= link_to 'Profile', user_path(current_user) %> |
     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
 </div>
 <% else %>
@@ -35,7 +35,7 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
   </div>
-</div>3
+</div>
 
 
   <ul class="nav">

@@ -1,0 +1,15 @@
+<h1>Cool places</h1>
+
+<%= @user.name  %>
+<br/>
+<br/>
+
+
+<% @locations.each do |item| %>
+<img src="<%=item['cover_url']%>"/>
+<h3><div class="title_name"><%=item['name'] %></div></h3>
+<%= link_to 'Delete',  location_path(user_id: @user.id, location_id: item.id), method: :delete %>
+
+<br/>
+
+<% end  %>

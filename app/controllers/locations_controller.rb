@@ -25,15 +25,35 @@ class LocationsController < ApplicationController
     @user_locations_id = current_user.id
     #gets user id
     @user_locations = UserLocation.new(user: current_user, location: Location.last)
-
-    if @user_locations.save
+      if @user_locations.save
       flash[:notice] = "Item is saved"
-
-
-
     # if @add_location.save
     #   flash[:notice] = "Your item was saved!"
     #   current_user
+      end
     end
+
+
+
+  def destroy
+    # @user = current_user.id
+    @location = Location.find(params[:location_id])
+    @userlocation = UserLocation.find_by(user_id: current_user.id, location_id: params[:location_id]).destroy
+    redirect_to user_path
   end
+
+
 end
+
+#
+# def show
+#   @user = current_user
+#   @user_location = UserLocation.all
+#   @locations = current_user.locations
+# end
+#
+# def destroy
+#   @location = Location.find(params[:id])
+#   @location.destroy
+#   redirect_to user_path
+# end

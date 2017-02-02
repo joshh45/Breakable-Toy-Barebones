@@ -29,16 +29,31 @@ class App extends Component {
   handleSubmit(event) {
     let activity = this.state.activity
     let location = this.state.location
-    let newlocation = [];
     event.preventDefault();
 
-    let fetchBody = { location: activity, activity: location};
+    let fetchBody = {
+      yelp_search_params: {
+        location: location,
+        activity: activity
+      }
+    };
 
-    fetch('/api/v1/locations?activity&location',
+    fetch('/api/v1/locations/yelp_api_search',
     { method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
     body: JSON.stringify(fetchBody) })
+    .then(response => {
+       if (response.ok) {
+         return response;
+       } else {
+         let errorMessage = `${response.status} (${response.statusText})`,
+         error = new Error(errorMessage);
+         throw(error);
+       }
+     })
     .then(function(response) {
-      newLocation = response.json();
+      let newLocation = response.json();
       return newLocation;
     }).then((response) =>
     this.setState({

@@ -7,7 +7,11 @@ class Api::V1::LocationsController < ApplicationController
   end
 
   def yelp_api_search
-    binding.pry
+    @activity = yelp_search_params["activity"]
+    @location = yelp_search_params["location"]
+    @data = get_trip(@location, @activity).to_json
+    @data = JSON.parse(@data)
+    render json: @data
   end
 
 

@@ -7,7 +7,8 @@ class App extends Component {
     super(props);
     this.state = {
       location: "",
-      activity: ""
+      activity: "",
+      data: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,10 +56,11 @@ class App extends Component {
     .then(function(response) {
       let newLocation = response.json();
       return newLocation;
-    }).then((response) =>
+    }).then((response) =>{
     this.setState({
+      data: response['businesses']
     })
-  );
+  });
 }
 
 
@@ -71,8 +73,11 @@ class App extends Component {
         handleLocationChange={this.handleLocationChange}
         />
         <br/>
-        <h1> ADD A C00L LIST OF STUFF </h1>
-        <LocationList/>
+        <h1> React is cool... i guess :) </h1>
+        <br/>
+        <LocationList
+        data={this.state.data}
+        />
       </div>
 
 

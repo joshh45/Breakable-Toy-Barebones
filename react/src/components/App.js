@@ -73,7 +73,6 @@ class App extends Component {
         handleLocationChange={this.handleLocationChange}
         />
         <br/>
-        <h1> React is cool... i guess :) </h1>
         <br/>
         <LocationList
         data={this.state.data}

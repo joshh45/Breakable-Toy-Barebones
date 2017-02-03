@@ -2,7 +2,8 @@
 
 <h1> THIS IS WHERE I WANT TO SEE MY LIST OF ITEMS </h1>
 
-<h1 class="title"> Adventure Awaits </hi>
+<h1 class="title"> Adventure Awaits </h1>
+<br/>
 
 <div class="search-forms">
   <!-- <p>
@@ -12,13 +13,21 @@
   </p> -->
 
   <div class="form">
-    <p>
-      <%= form_tag('./locations', method: "get" ) do %>
-      <%= text_field_tag :location, params[:location], placeholder: "Location" %> <br/>
-      <%= text_field_tag :activity, params[:activity], placeholder: "Activity" %> <br/>
-      <div class="discover"><%= submit_tag("Discover") %></div>
-      <% end  %>
-    </p>
+    <div class="row">
+      <div class= "large-12 medium-12 small-12">
+        <div class="row">
+          <%= form_tag('./locations', method: "get" ) do %>
+          <div class="large-offset-2 large-10 centered columns">
+            <p>
+              <%= text_field_tag :location, params[:location], placeholder: "Please Enter A Location...", autofocus: true %>
+              <%= text_field_tag :activity, params[:activity], placeholder: "Please Enter A Activity...", autofocus: true %>
+              <div class="discover"><%= submit_tag("Discover") %></div>
+            </p>
+          </div>
+          <% end  %>
+        </div>
+      </div>
+    </div>
   </div>
 
 
@@ -36,6 +45,7 @@
     <h1> API data </h1>
   <% @data_object['businesses'].each do |x| %>
     <div class="items">
+      <br/>
        <div class="box1"><img src="<%=x['image_url']%>"/></div>
        <h3><div class="title_name"> <%= x['name'] %></div></h3>
        <p>Rating:<%= x['rating'] %></p>

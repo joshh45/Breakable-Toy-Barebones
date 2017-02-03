@@ -52,23 +52,35 @@
    background: #FFEBCD;
    opacity: 0.6; */
 background-color: rgba(5,4,2,0.35);
-width:300px;
+/*width:300px;
 height: 100%;
 margin: 5px;
-padding: 45px;
+padding: 45px;*/
 }
 
 .items {
   border: 5px solid black ;
   width: 450px;
   margin-bottom: 50px;
+  text-align: center;
+}
+
+.items_profile {
+  border: 3px solid black ;
+  width: 250px;
+  margin-bottom: 20px;
 }
 
 .title_name {
+  text-align: center;
 }
 
 .box1 {
-  background-color: blue;
+  text-align: center;
+}
+
+.delete {
+  text-align: center;
 }
 
 .discover {

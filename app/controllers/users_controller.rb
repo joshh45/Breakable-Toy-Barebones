@@ -6,10 +6,10 @@ class UsersController < ApplicationController
     @locations = current_user.locations
   end
 
-  def destroy
-    @location = Location.find(params[:id])
-    @location.destroy
-    redirect_to user_path
-  end
+  # def destroy
+  #   @location = Location.find(params[:id])
+  #   @location.destroy
+  #   redirect_to user_path
+  # end
 
 end

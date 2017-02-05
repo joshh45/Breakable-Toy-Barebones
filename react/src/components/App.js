@@ -32,12 +32,30 @@ class App extends Component {
 
 // add to button
   handleAddTo(name, img_url, rating, rating_url, address, url){
-    let AddName = name;
-    let AddImgUrl = img_url;
-    let AddRating = rating;
-    let AddRating_url = rating_url;
-    let AddAddress = address;
-    let AddUrl = url;
+
+    let fetchBody = {
+      AddName : name,
+      AddImgUrl : img_url,
+      AddRating : rating,
+      AddRating_url : rating_url,
+      AddAddress : address,
+      AddUrl : url
+    };
+
+    fetch('/api/v1/users_locations',
+    { method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: JSON.stringify(fetchBody) })
+    .then(response => {
+       if (response.ok) {
+         return response;
+       } else {
+         let errorMessage = `${response.status} (${response.statusText})`,
+         error = new Error(errorMessage);
+         throw(error);
+       }
+     });
   }
 
 // handle react search bar

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const LocationList = props => {
-
   let list = props.data.map((activity) => {
     return(
       <div className="row">
@@ -14,7 +13,7 @@ const LocationList = props => {
               <p><img src={activity.rating_img_url}/></p>
               <p>{activity.location.display_address.join(" ")}</p>
               <p><a href={activity.url}>Learn More</a></p>
-              <input id="add_to" className="btn" type="submit" value="Add to Profile"/>
+              <input id="add_to" className="btn" type="submit" onClick={props.addto.bind(this, activity.name, activity.image_url, activity.rating, activity.rating_img_urlm, activity.location.display_address.join(" "), activity.url)} value="Add to Profile"/>
             <br/>
             <br/>
         </div>

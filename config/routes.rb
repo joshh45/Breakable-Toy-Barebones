@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :user_locations
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
       resources :users
       resources :locations do
         collection do

@@ -9,11 +9,14 @@ class App extends Component {
       location: "",
       activity: "",
       data: [],
+      addto: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleActivityChange = this.handleActivityChange.bind(this);
+    this.handleAddTo = this.handleAddTo.bind(this);
+
 
   }
 
@@ -27,9 +30,20 @@ class App extends Component {
     this.setState({ activity: newActivity });
   }
 
+// add to button
+  handleAddTo(name, img_url, rating, rating_url, address, url){
+    let AddName = name;
+    let AddImgUrl = img_url;
+    let AddRating = rating;
+    let AddRating_url = rating_url;
+    let AddAddress = address;
+    let AddUrl = url;
+  }
+
+// handle react search bar
   handleSubmit(event) {
-    let activity = this.state.activity
-    let location = this.state.location
+    let activity = this.state.activity;
+    let location = this.state.location;
     event.preventDefault();
 
     let fetchBody = {
@@ -59,14 +73,19 @@ class App extends Component {
     }).then((response) =>{
     this.setState({
       data: response['businesses']
-    })
+    });
   });
 }
+
+
+
+
 
 
   render() {
     return(
       <div>
+        <h1> ( ͡° ͜ʖ ͡°) React in progress...  (┛◉Д◉)┛彡┻━┻ </h1>
         <SearchForms
         handleSubmit={this.handleSubmit}
         handleActivityChange={this.handleActivityChange}
@@ -76,6 +95,7 @@ class App extends Component {
         <br/>
         <LocationList
         data={this.state.data}
+        addto={this.handleAddTo}
         />
       </div>
 

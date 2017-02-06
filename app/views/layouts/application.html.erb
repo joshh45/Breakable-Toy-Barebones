@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <%= render 'layouts/navigation' %>
+
+
     <title><%= content_for?(:title) ? yield(:title) : "Discover" %></title>
 
     <%= stylesheet_link_tag    "application" %>
@@ -14,25 +17,25 @@
 
 
 
-</div class="mang">
+
   <div class= "large-12 medium-12 small-12">
     <p class="navbar-text pull-middle">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 
-  <div class="nav_buttons">
-    <%= render 'layouts/footer' %>
-    <%= link_to 'Home', homepage_index_path %> |
-    <%= link_to 'Profile', user_path(current_user) %> |
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-</div>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+    <% if user_signed_in? %>
+     <div class="nav_buttons">
+      <%= render 'layouts/footer' %>
+      <%= link_to 'Home', homepage_index_path %> |
+      <%= link_to 'Profile', user_path(current_user) %> |
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+    </div>
+    <% else %>
+      <div class="nav_buttons">
+        <%= render 'layouts/footer' %>
+      </div>
+    <% end %>
+
   </div>
-</div>
+
 
 
   <!-- <ul class="nav">

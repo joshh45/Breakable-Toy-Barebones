@@ -103,7 +103,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <h1> ( ͡° ͜ʖ ͡°) React in progress...  (┛◉Д◉)┛彡┻━┻ </h1>
+        <h1> (┛◉Д◉)┛彡┻━┻ </h1>
         <SearchForms
         handleSubmit={this.handleSubmit}
         handleActivityChange={this.handleActivityChange}

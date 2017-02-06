@@ -4,19 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Discover" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-  <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+
 
 </div class="mang">
   <div class= "large-12 medium-12 small-12">
@@ -26,6 +22,7 @@
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 
   <div class="nav_buttons">
+    <%= render 'layouts/footer' %>
     <%= link_to 'Home', homepage_index_path %> |
     <%= link_to 'Profile', user_path(current_user) %> |
     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
@@ -38,11 +35,16 @@
 </div>
 
 
-  <ul class="nav">
+  <!-- <ul class="nav">
 <li class="active"><a href="/ideas">Ideas</a></li>
-</ul>
+</ul> -->
 
-
+<!-- <% if notice %>
+<p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+<p class="alert alert-danger"><%= alert %></p>
+<% end %> -->
 
 
   <body>
@@ -50,4 +52,5 @@
     <%= yield %>
 
   </body>
+
 </html>

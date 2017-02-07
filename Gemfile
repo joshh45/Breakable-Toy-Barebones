@@ -10,6 +10,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'yelp', require: 'yelp'
 gem 'dotenv-rails'
+gem 'geocoder'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

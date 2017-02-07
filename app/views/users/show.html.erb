@@ -14,34 +14,43 @@
     <h3>My Google Maps Demo</h3>
     <div id="map"></div>
     <script>
-      function initMap() {
 
-        var boston = {lat: 42.364506, lng: -71.038887};
-        // instance goes here html_safe
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: boston
-        });
-        var marker = new google.maps.Marker({
-          position: boston,
+    function initMap() {
+
+      var boston = {lat: 42.364506, lng: -71.038887};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: boston
+      });
+
+      var cords = <%= @coordinates.html_safe %>
+      for( var i = 0; i < cords.length; i++){
+        var latLng = new google.maps.LatLng(cords[i].lat, cords[i].long);
+        let marker = new google.maps.Marker({
+          position: latLng,
+          animation: google.maps.Animation.DROP,
           map: map
         });
 
-        var cords = <%= @coordinates.html_safe %>
-        for( var i = 0; i < cords.length; i++){
-          console.log(cords[i])
-          console.log(cords[i].lat)
-          console.log(cords[i].long)
-          var latLng = new google.maps.LatLng(cords[i].lat, cords[i].long);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
+        function bounce(marker) {
+          if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+          } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+          }
         }
+
+        function toggleBounce() {
+          bounce(marker)
+        }
+
+        marker.addListener('click', toggleBounce);
       }
+    }
+
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MY_API_KEY']%>&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['API_KEY']%>&callback=initMap">
     </script>
   </body>
 </html>

@@ -50,9 +50,7 @@
   vertical-align:top;
 }
 
-.item-page {
 
-}
 
 .form {
   /*width: 125px;
@@ -69,8 +67,8 @@ padding: 45px;*/
 }
 
 .location_background {
-  background: url(./discoverphoto.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
+background: url(./discoverphoto.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
@@ -85,9 +83,8 @@ background-position:top center;
 background-attachment:fixed;
 overflow:hidden;
 overflow:auto;
-
-
 }
+
 
 .items {
   border: 2px solid black ;
@@ -203,7 +200,7 @@ font-weight: bold;
   background-repeat: repeat-y;
   background-position:top center;
   background-attachment:fixed;
-  overflow:hidden; d
+  overflow:hidden;
   overflow:auto;
 }
 

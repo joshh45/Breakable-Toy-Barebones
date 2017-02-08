@@ -4,7 +4,7 @@ const LocationList = props => {
   let list = props.data.map((activity) => {
     return(
       <div className="row">
-      <div className="medium-6 columns medium-offset-3 columns">
+      <div>
         <div className="items">
             <br/>
               <h1><img src={activity.image_url}/></h1>

@@ -13,7 +13,9 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
 
 
@@ -23,7 +25,6 @@
 
     <% if user_signed_in? %>
      <div class="nav_buttons">
-      <%= render 'layouts/footer' %>
       <%= link_to 'Home', homepage_index_path %> |
       <%= link_to 'Profile', user_path(current_user) %> |
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
@@ -33,7 +34,6 @@
         <%= render 'layouts/footer' %>
       </div>
     <% end %>
-
   </div>
 
 
@@ -51,9 +51,7 @@
 
 
   <body>
-
     <%= yield %>
-
   </body>
 
 </html>

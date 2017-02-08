@@ -1,4 +1,3 @@
-<h1>  ¯\_(ಥ‿ಥ)_/¯ </h1>
 
 
 <html>
@@ -11,8 +10,11 @@
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
+    <br/>
+    <h1> <p class="title-profile"> Discover <i class="fa fa-cloud" aria-hidden="true" style="color:LightSkyBlue;"></i> </p> </h1>
+      <div class=large-offset-2 large-10 centered columns>
+        <div id="map"></div>
+      </div>
     <script>
 
     function initMap() {
@@ -32,19 +34,32 @@
           map: map
         });
 
-        function bounce(marker) {
-          if (marker.getAnimation() !== null) {
-            marker.setAnimation(null);
-          } else {
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-          }
+        // function bounce(marker) {
+        //   if (marker.getAnimation() !== null) {
+        //     marker.setAnimation(null);
+        //   } else {
+        //     marker.setAnimation(google.maps.Animation.BOUNCE);
+        //   }
+        // }
+        var message = `${cords[i].name}`;
+        function addInfoWindow(marker, message) {
+
+            var infoWindow = new google.maps.InfoWindow({
+                content: `<h4>${message}</h4>` + `${"hi"}`
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infoWindow.open(map, marker);
+            });
         }
 
-        function toggleBounce() {
-          bounce(marker)
-        }
+        // function toggleBounce() {
+        //   bounce(marker)
+        // }
 
-        marker.addListener('click', toggleBounce);
+
+        marker.addListener('click', addInfoWindow(marker, message));
+        // marker.addListener('click', toggleBounce);
       }
     }
 
@@ -60,12 +75,16 @@
 <br/>
 
 
-<% @locations.each do |item| %>
-  <div class="items_profile">
-      <br/>
-      <div class="box1"><img src="<%=item['cover_url']%>"/></div>
-        <h4><div class="title_name"><%=item['name'] %></div></h4>
-        <div class="delete"><%= link_to 'Delete',  location_path(user_id: @user.id, location_id: item.id), method: :delete %></div>
-        <br/>
-  </div>
+
+      <% @locations.each do |item| %>
+      <div class="large-3 large-centered columns medium-3 medium-centered columns">
+        <div class="items_profile">
+            <br/>
+            <div class="box1"><img src="<%=item['cover_url']%>"/></div>
+              <h4><div class="title_name"><%=item['name'] %></div></h4>
+              <div class="delete"><%= link_to 'Delete',  location_path(user_id: @user.id, location_id: item.id), method: :delete %></div>
+              <br/>
+        </div>
+      </div>
+
 <% end  %>

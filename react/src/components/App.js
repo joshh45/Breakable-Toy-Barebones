@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import SearchForms from './SearchForms';
 import LocationList from './LocationList';
+import Notifications, {notify} from 'react-notify-toast';
+
+
 
 class App extends Component {
   constructor(props){
@@ -49,6 +52,7 @@ class App extends Component {
     body: JSON.stringify(fetchBody) })
     .then(response => {
        if (response.ok) {
+         notify.show('Added to Profile!', 'success', 1500)
          return response;
        } else {
          let errorMessage = `${response.status} (${response.statusText})`,
@@ -103,18 +107,23 @@ class App extends Component {
   render() {
     return(
       <div>
-        <h1> (┛◉Д◉)┛彡┻━┻ </h1>
-        <SearchForms
-        handleSubmit={this.handleSubmit}
-        handleActivityChange={this.handleActivityChange}
-        handleLocationChange={this.handleLocationChange}
-        />
-        <br/>
-        <br/>
-        <LocationList
-        data={this.state.data}
-        addto={this.handleAddTo}
-        />
+        <div className='main'>
+          <Notifications />
+        </div>
+        <div id="reactbox">
+          <div className="react-title"><h5 id="reactword"> What Are You Waiting For? </h5></div>
+          <SearchForms
+          handleSubmit={this.handleSubmit}
+          handleActivityChange={this.handleActivityChange}
+          handleLocationChange={this.handleLocationChange}
+          />
+          <br/>
+          <br/>
+          <LocationList
+          data={this.state.data}
+          addto={this.handleAddTo}
+          />
+        </div>
       </div>
 
 

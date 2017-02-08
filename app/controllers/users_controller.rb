@@ -5,8 +5,7 @@ class UsersController < ApplicationController
     @user_location = UserLocation.all
     @locations = current_user.locations
     coordinates = @user.locations.map do |cord|
-      {lat: cord["latitude"], long: cord["longitude"]}
-      # cord = map set to hash cord.lat cord.longitude
+      {lat: cord["latitude"], long: cord["longitude"], name: cord["name"]}
     end
     @coordinates = JSON.unparse(coordinates)
   end

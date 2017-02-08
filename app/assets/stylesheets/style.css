@@ -29,9 +29,19 @@
 	line-height: 26.4px;
 }
 
+.title-profile {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  font-family: 'Dancing Script', cursive;
+}
+
+
 .nav_buttons {
   text-align: center;
   background: black;
+    width: 100%;
+    position: ab
 }
 
 
@@ -59,7 +69,7 @@ padding: 45px;*/
 }
 
 .location_background {
-  background: url(./breakable-background_Fotor.jpg) no-repeat center center fixed;
+  background: url(./discoverphoto.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
@@ -96,6 +106,10 @@ overflow:auto;
   text-align: center;
 }
 
+.title {
+  color: white;
+}
+
 .box1 {
   text-align: center;
 }
@@ -118,7 +132,6 @@ overflow:auto;
 .search-forms {
 margin: 100px;
 background-color: #ffffff;
-border: 1px solid black;
 opacity: 0.8;
 filter: alpha(opacity=70);
 font-weight: bold;
@@ -168,4 +181,46 @@ font-weight: bold;
 #react_button:active {
 	position:relative;
 	top:1px;
+}
+
+.show-background {
+    background: url(./profile.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 15%;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 100%;
+  height: 100%;
+  width: 100%;
+  background-repeat: repeat-y;
+  background-position:top center;
+  background-attachment:fixed;
+  overflow:hidden; d
+  overflow:auto;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0rem;
+  background-color: black;
+  text-align: center;
+}
+
+.react-title {
+  text-align: center;
+}
+
+#reactword {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+}
+
+#reactbox {
+  padding-top: 15px;
 }

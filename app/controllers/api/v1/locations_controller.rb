@@ -27,7 +27,7 @@ private
   end
 
   def get_trip(location, activity)
-    Yelp.client.search(location, {term: activity}, limit: 5)
+    Yelp.client.search(location, {term: activity}, limit: 8)
   end
 
 end

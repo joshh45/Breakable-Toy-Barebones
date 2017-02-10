@@ -1,12 +1,16 @@
-<h2>Sign up</h2>
-
+<div class='signup'>
+<div class='row'>
+<div class='forms large-6 medium-centered columns'>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
 
+<div class="order">
+  <h2 class="signuptitle">Sign up</h2>
+
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true  %>
   </div>
 
   <div class="field">
@@ -29,7 +33,13 @@
 
   <div class="actions">
     <%= f.submit "Sign up" %>
+    <br/>
+    <%= render "devise/shared/links" %>
+
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</div>

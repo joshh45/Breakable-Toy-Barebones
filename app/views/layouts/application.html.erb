@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= render 'layouts/navigation' %>
 
 
     <title><%= content_for?(:title) ? yield(:title) : "Discover" %></title>
@@ -20,21 +19,7 @@
 
 
 
-  <div class= "large-12 medium-12 small-12">
-    <p class="navbar-text pull-middle">
 
-    <% if user_signed_in? %>
-     <div class="nav_buttons">
-      <%= link_to 'Home', homepage_index_path %> |
-      <%= link_to 'Profile', user_path(current_user) %> |
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-    </div>
-    <% else %>
-      <div class="nav_buttons">
-        <%= render 'layouts/footer' %>
-      </div>
-    <% end %>
-  </div>
 
 
 
@@ -51,6 +36,24 @@
 
 
   <body>
+    <%= render 'layouts/navigation' %>
+    <div class= "large-12 medium-12 small-12">
+      <p class="navbar-text pull-middle">
+
+      <% if user_signed_in? %>
+       <div class="nav_buttons">
+        <%= link_to 'Home', homepage_index_path %> |
+        <%= link_to 'Profile', user_path(current_user) %> |
+        <%= link_to 'Discover', locations_path %>
+      </div>
+      <% else %>
+        <div class="nav_buttons">
+          <div class="row">
+
+          </div>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 

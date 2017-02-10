@@ -15,5 +15,4 @@ class UsersController < ApplicationController
   #   @location.destroy
   #   redirect_to user_path
   # end
-
 end

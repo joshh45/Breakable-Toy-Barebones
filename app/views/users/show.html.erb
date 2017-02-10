@@ -7,6 +7,7 @@
         width: 75%;
         border-style: solid;
         border-color: black;
+        border-radius: 10px;
        }
     </style>
   </head>
@@ -43,10 +44,12 @@
         //   }
         // }
         var message = `${cords[i].name}`;
+        var url = `${cords[i].url}`;
+        var address = `${cords[i].address}`;
         function addInfoWindow(marker, message) {
 
             var infoWindow = new google.maps.InfoWindow({
-                content: `<p>${message}</p>` + `<p>${"hey"}</p>`
+                content: `<p>${message}</p>` + `<p>${address}</p>` + `<p><a href="${url}"/>Learn More</p>`
             });
 
             google.maps.event.addListener(marker, 'click', function () {
@@ -80,9 +83,9 @@
       <% @locations.each do |item| %>
       <% @hey = "" %>
       <% if @user_location.find_by(user_id: current_user["id"], location_id: item.id).favorite == true %>
-      <% @hey = "💟"%>
+      <% @hey = "\u{1F49F}"%>
       <% end  %>
-      <div class="large-5 large-centered columns medium-3 medium-centered columns small">
+      <div class="small-4 columns">
         <div class="items_profile">
             <div id="heart"><p> <%= @hey %> </p></div>
             <div class="box1"><img src="<%=item['cover_url']%>"/></div>

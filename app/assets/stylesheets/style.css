@@ -31,9 +31,8 @@
 
 .title-profile {
   text-align: center;
-  font-weight: bold;
   font-size: 60px;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Permanent Marker', cursive;
 }
 
 
@@ -97,6 +96,12 @@ overflow:auto;
   border: 2px solid black ;
   width: 250px;
   margin-bottom: 20px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  font-weight: bold;
+  height: 320px;
 }
 
 .title_name {
@@ -106,6 +111,7 @@ overflow:auto;
 
 .title {
   color: white;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .box1 {
@@ -246,8 +252,8 @@ font-weight: bold;
 -o-background-size: cover;
 background-size: cover;
 padding-top: 15%;
-padding-left: 20%;
-padding-right: 20%;
+padding-left: 10%;
+padding-right: 10%;
 padding-bottom: 100%;
 height: 100%;
 width: 100%;

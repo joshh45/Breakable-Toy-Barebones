@@ -83,7 +83,7 @@
       <% @locations.each do |item| %>
       <% @hey = "" %>
       <% if @user_location.find_by(user_id: current_user["id"], location_id: item.id).favorite == true %>
-      <% @hey = "\u{1F49F}"%>
+      <% @hey = "\u{2764}"%>
       <% end  %>
       <div class="small-4 columns">
         <div class="items_profile">

@@ -115,6 +115,10 @@ overflow:auto;
   text-align: center;
 }
 
+.favorite {
+  text-align:center;
+}
+
 .discover {
   font-size: 20px;
   border: red;
@@ -225,4 +229,9 @@ font-weight: bold;
 
 #reactbox {
   padding-top: 15px;
+}
+
+#heart {
+  width: 100%;
+  font-size: 20px;
 }

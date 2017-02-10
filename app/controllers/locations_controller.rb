@@ -34,6 +34,16 @@ class LocationsController < ApplicationController
     end
 
 
+  def update
+    @hey = params
+    @userlocation = UserLocation.find_by(user_id: @hey['id'], location_id: @hey['location_id'])
+      if @userlocation.favorite == false
+        @userlocation.favorite = true
+        @userlocation.save
+      end
+    redirect_to user_path
+  end
+
 
   def destroy
     # @user = current_user.id

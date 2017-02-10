@@ -77,11 +77,16 @@
 
 
       <% @locations.each do |item| %>
+      <% @hey = "" %>
+      <% if @user_location.find_by(user_id: current_user["id"], location_id: item.id).favorite == true %>
+      <% @hey = "💟"%>
+      <% end  %>
       <div class="large-3 large-centered columns medium-3 medium-centered columns">
         <div class="items_profile">
-            <br/>
+            <div id="heart"><p> <%= @hey %> </p></div>
             <div class="box1"><img src="<%=item['cover_url']%>"/></div>
               <h4><div class="title_name"><%=item['name'] %></div></h4>
+              <div class="favorite"><%=link_to "Favorite", location_path(@user.id, location_id: item.id), method: :put %></div>
               <div class="delete"><%= link_to 'Delete',  location_path(user_id: @user.id, location_id: item.id), method: :delete %></div>
               <br/>
         </div>

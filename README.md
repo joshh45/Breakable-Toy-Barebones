@@ -38,7 +38,7 @@
 - Foundation
 
 
-### ** Testing**
+### Testing
 
 - RSpec
 - Capybara

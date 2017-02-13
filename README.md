@@ -1,7 +1,7 @@
-## **Discover**
+## Discover
 
 
-### ** Overview**
+### Overview
 
 
 
@@ -9,7 +9,7 @@
 
 
 
-### **Core Features**
+### Core Features
 
 - Users authentication using devise 
 
@@ -26,9 +26,9 @@
 - Searches are not limited to just Boston! Explore on!
 
 
-#**Core Technologies**#
+#Core Technologies#
 
-### ** Stack**
+###  Stack
 
 
 - PostgreSQL
@@ -44,14 +44,14 @@
 - Capybara
 - FactoryGirl
 
-### ** Gems**
+###  Gems
 
 - [Devise](https://github.com/plataformatec/devise)
 - [Yelp-Ruby](https://github.com/Yelp/yelp-ruby) 
 - [Geocoder](https://github.com/alexreisner/geocoder) 
 - Pry (debugging purposes) 
 
-### ** APIs**
+###  APIs
 
 - Google Maps API
 - Yelp's API

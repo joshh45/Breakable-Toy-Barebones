@@ -3,11 +3,7 @@ class LocationsController < ApplicationController
   def index
     @location = params[:location]
     @activity = params[:activity]
-    # if @location.nil?
-    #   @message = "testing statements"
-    # else
-    #   @message = ""
-    # end
+
     if @location.nil? && @activity.nil?
       @message = "hey"
     else
@@ -54,16 +50,3 @@ class LocationsController < ApplicationController
 
 
 end
-
-#
-# def show
-#   @user = current_user
-#   @user_location = UserLocation.all
-#   @locations = current_user.locations
-# end
-#
-# def destroy
-#   @location = Location.find(params[:id])
-#   @location.destroy
-#   redirect_to user_path
-# end

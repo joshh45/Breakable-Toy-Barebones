@@ -20,7 +20,6 @@
     <script>
 
     function initMap() {
-
       var boston = {lat: 42.364506, lng: -71.038887};
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
@@ -36,13 +35,7 @@
           map: map
         });
 
-        // function bounce(marker) {
-        //   if (marker.getAnimation() !== null) {
-        //     marker.setAnimation(null);
-        //   } else {
-        //     marker.setAnimation(google.maps.Animation.BOUNCE);
-        //   }
-        // }
+
         var message = `${cords[i].name}`;
         var url = `${cords[i].url}`;
         var address = `${cords[i].address}`;
@@ -57,13 +50,9 @@
             });
         }
 
-        // function toggleBounce() {
-        //   bounce(marker)
-        // }
 
 
         marker.addListener('click', addInfoWindow(marker, message));
-        // marker.addListener('click', toggleBounce);
       }
     }
 

@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @user = User.all
+  end
+
   def show
     @user = current_user
     @user_location = UserLocation.all
@@ -10,9 +14,5 @@ class UsersController < ApplicationController
     @coordinates = JSON.unparse(coordinates)
   end
 
-  # def destroy
-  #   @location = Location.find(params[:id])
-  #   @location.destroy
-  #   redirect_to user_path
-  # end
+
 end
